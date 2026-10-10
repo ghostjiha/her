@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Simi! ❤️</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter and Great Vibes for romantic touch -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Confetti library for celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1c29 0%, #2b1055 50%, #7597de 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .romantic-font {
+            font-family: 'Great Vibes', cursive;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        .floating-heart {
+            animation: float 4s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 text-white relative">
+
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-10 left-10 text-pink-400 opacity-20 text-4xl floating-heart" style="animation-delay: 0s;">❤️</div>
+        <div class="absolute top-1/4 right-16 text-red-400 opacity-20 text-5xl floating-heart" style="animation-delay: 1s;">💖</div>
+        <div class="absolute bottom-20 left-1/4 text-pink-300 opacity-20 text-6xl floating-heart" style="animation-delay: 2s;">✨</div>
+        <div class="absolute bottom-1/3 right-1/4 text-rose-400 opacity-20 text-4xl floating-heart" style="animation-delay: 1.5s;">💝</div>
+    </div>
+
+    <main class="relative z-10 w-full max-w-2xl mx-auto text-center px-4">
+
+        <!-- Pre-countdown view -->
+        <div id="countdown-section" class="glass-card rounded-3xl p-8 sm:p-12 shadow-2xl transition-all duration-500">
+            <div class="inline-block mb-4 p-3 bg-pink-500/20 rounded-full text-pink-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-bold tracking-tight mb-3">Counting Down for Simi ❤️</h1>
+            <p class="text-pink-200 text-sm sm:text-base mb-8 max-w-md mx-auto">Every second brings us closer to midnight on October 11th, celebrating my beautiful Senorita! 💕</p>
+
+            <!-- Countdown Timer Grid -->
+            <div class="grid grid-cols-4 gap-3 sm:gap-4 mb-8">
+                <div class="glass-card rounded-2xl p-3 sm:p-4 flex flex-col items-center justify-center">
+                    <span id="days" class="text-2xl sm:text-4xl font-bold text-pink-300">00</span>
+                    <span class="text-xs text-gray-300 uppercase tracking-wider mt-1">Days</span>
+                </div>
+                <div class="glass-card rounded-2xl p-3 sm:p-4 flex flex-col items-center justify-center">
+                    <span id="hours" class="text-2xl sm:text-4xl font-bold text-pink-300">00</span>
+                    <span class="text-xs text-gray-300 uppercase tracking-wider mt-1">Hours</span>
+                </div>
+                <div class="glass-card rounded-2xl p-3 sm:p-4 flex flex-col items-center justify-center">
+                    <span id="minutes" class="text-2xl sm:text-4xl font-bold text-pink-300">00</span>
+                    <span class="text-xs text-gray-300 uppercase tracking-wider mt-1">Minutes</span>
+                </div>
+                <div class="glass-card rounded-2xl p-3 sm:p-4 flex flex-col items-center justify-center">
+                    <span id="seconds" class="text-2xl sm:text-4xl font-bold text-pink-300 animate-pulse">00</span>
+                    <span class="text-xs text-gray-300 uppercase tracking-wider mt-1">Seconds</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post-countdown celebration view (Hidden initially) -->
+        <div id="celebration-section" class="hidden glass-card rounded-3xl p-8 sm:p-12 shadow-2xl transition-all duration-700 transform scale-95 opacity-0">
+            <div class="inline-block mb-2 text-6xl sm:text-7xl floating-heart">🎉</div>
+            <h1 class="romantic-font text-5xl sm:text-7xl text-pink-300 mb-2 drop-shadow-lg">Happy Birthday, Simi!</h1>
+            <h2 class="text-xl sm:text-2xl font-semibold mb-6 tracking-wide text-white">To My Dearest Senorita, My Absolute Everything ❤️</h2>
+            
+            <div class="glass-card rounded-2xl p-6 mb-6 text-left text-pink-100 text-sm sm:text-base leading-relaxed border border-pink-500/20 shadow-inner">
+                <p class="mb-3">My sweet Simi,</p>
+                <p class="mb-3">The clock has finally struck 12:00 AM on October 11th! Today is all about celebrating the incredible, beautiful, and kind-hearted soul that you are. You bring endless joy, warmth, and light into my life every single day, my gorgeous Senorita.</p>
+                <p>May this year bring you as much happiness as you give to everyone around you. I am so deeply lucky to call you mine. Let's make this year unforgettable!</p>
+                <p class="mt-4 font-semibold text-pink-300 text-right">— Forever yours 💕</p>
+            </div>
+
+            <button onclick="playMusicAndConfetti()" class="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 font-semibold rounded-xl shadow-lg transition-transform transform hover:scale-105 active:scale-95 cursor-pointer">
+                Celebrate Again! 🎊
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        // Target date: October 11th at 12:00 AM
+        function getTargetDate() {
+            const now = new Date();
+            let year = now.getFullYear();
+            let target = new Date(year, 9, 11, 0, 0, 0); // Month index 9 is October
+            
+            if (now > target) {
+                target = new Date(year + 1, 9, 11, 0, 0, 0);
+            }
+            return target.getTime();
+        }
+
+        const targetDate = getTargetDate();
+        let celebrationTriggered = false;
+
+        function triggerBirthday() {
+            if (celebrationTriggered) return;
+            celebrationTriggered = true;
+
+            const countdownSec = document.getElementById('countdown-section');
+            const celebrationSec = document.getElementById('celebration-section');
+
+            countdownSec.style.opacity = '0';
+            countdownSec.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                countdownSec.classList.add('hidden');
+                celebrationSec.classList.remove('hidden');
+                setTimeout(() => {
+                    celebrationSec.style.opacity = '1';
+                    celebrationSec.style.transform = 'scale(1)';
+                }, 50);
+            }, 300);
+
+            // Launch initial celebratory confetti
+            launchConfettiBurst();
+        }
+
+        function launchConfettiBurst() {
+            const duration = 5 * 1000;
+            const end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 7,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#ff69b4', '#ff1493', '#ffc0cb', '#ffffff']
+                });
+                confetti({
+                    particleCount: 7,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#ff69b4', '#ff1493', '#ffc0cb', '#ffffff']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            }());
+        }
+
+        function playMusicAndConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff69b4', '#ff1493', '#ffc0cb', '#ffffff', '#ff4500']
+            });
+        }
+
+        // Timer interval update function
+        function updateCountdown() {
+            if (celebrationTriggered) return;
+
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance <= 0) {
+                triggerBirthday();
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        // Run immediately and update every second
+        updateCountdown();
+        const timerInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
